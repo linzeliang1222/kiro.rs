@@ -1,0 +1,12 @@
+services:
+  kiro-rs:
+    build: .
+    container_name: kiro-rs
+    ports:
+      - "8990:8990"
+    volumes:
+      - ./config:/app/config:ro
+    restart: unless-stopped
+    environment:
+      - RUST_LOG=info
+
